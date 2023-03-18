@@ -11,7 +11,7 @@ namespace commands {
         const dpp::slashcommand_t &event;
         const dpp::user &user;
         boost::json::array _create_request_object(const std::string &prompt);
-        std::string _create_chat_completion(const std::string &model, boost::json::array messages);
+        std::string _create_chat_completion(const std::string &model, const boost::json::array &messages);
         public:
             pickup_line_command(dpp::cluster &bot, const dpp::slashcommand_t &event, const dpp::user &user) : bot(bot), event(event), user(user) {};
             void send_pickup_line(std::string &prompt) {
@@ -33,7 +33,7 @@ namespace commands {
                     }
                 });
             }
-            std::string _create_chat_completion(const std::string &model, boost::json::array messages) {
+            std::string _create_chat_completion(const std::string &model, const boost::json::array &messages) {
                 boost::json::object chat_completion = {
                     {"model", model},
                     {"messages", messages}
