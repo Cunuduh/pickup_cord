@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <dpp/dpp.h>
 #include <string>
-#include "src/commands/pickup_line.hpp"
+#include "commands/pickup_line.hpp"
 
 using namespace dpp;
 using namespace std;
